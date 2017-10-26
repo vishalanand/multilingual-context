@@ -41,8 +41,48 @@
       <section>
       {{ content }}
       <div id="container" style="height: 100%"></div>
-      ABC
-      <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+      <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       <script type="text/javascript">
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var key = "1ndNXEMrekWBqraIInvAXW27RIXtkdlXiWoW7IhM_QaM";
+        var url = "https://spreadsheets.google.com/feeds/list/" + key + "/od6/public/values?alt=json";
+        var obj = {}
+        $.get(url, function (result) {
+            var data = [];
+            $(result.feed.entry).each(function (index, row) {
+                if (obj[row.gsx$language.$t] == undefined) { obj[row.gsx$language.$t] = [] }
+                obj[row.gsx$language.$t].push([row.gsx$x.$t, row.gsx$y.$t, 0.2, row.gsx$word.$t, row.gsx$language.$t])
+            });
+            var series = []
+            var legend = []
+            for(var className in obj) {
+                legend.push(className);
+                series.push({
+                    name: className,
+                    type: 'scatter',
+                    data: obj[className],
+                    itemStyle: {normal: {opacity: 0.8}},
+                    symbolSize: function (val) {return val[2] * 40;}
+                });
+            }
+            option = {
+                animation: true,
+                legend: {data: legend, type: "scroll"},
+                tooltip: {},
+                xAxis: {type: 'value', splitLine: {show: true}},
+                yAxis: {type: 'value', splitLine: {show: true}},
+                dataZoom: [{type: 'slider',show: true,xAxisIndex: [0]},
+                    {type: 'slider',show: true,yAxisIndex: [0],left: '93%'},
+                    {type: 'inside',xAxisIndex: [0]},
+                    {type: 'inside',yAxisIndex: [0]}
+                ],
+                series: series
+            };
+            if (option && typeof option === "object") {myChart.setOption(option, true);}
+        });
+       </script>
       </section>
       <footer>
         {% if site.github.is_project_page %}
