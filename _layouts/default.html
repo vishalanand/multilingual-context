@@ -40,11 +40,9 @@
       </header>
       <section>
       {{ content }}
-      {% capture scripts %}
-        {% include main.js %}
-      {% endcapture %}
-      <script>{{ scripts | uglify | strip }}</script>
       <div id="container" style="height: 100%"></div>
+      ABC
+      <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
       </section>
       <footer>
         {% if site.github.is_project_page %}
