@@ -12,22 +12,23 @@
         <a href="{{ site.github.url }}"> <h3>{{ site.title | default: site.github.repository_name }}</h3> </a>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-        {% if site.github.is_project_page %}<p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ github_name }}</small></a></p><br/>Project members:<br/>
+        {% if site.github.is_project_page %}<p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ github_name }}</small></a></p>
+        <p>This project is maintained by <br/><a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        <br/>Project members:<br/>
           <a href="http://vishalanand.net" target="_blank">Vishal Anand</a><br/>
           <a href="http://www.cs.columbia.edu/~smara/index.html" target="_blank">Smaranda Muresan</a><br/>
           <a href="https://www.linkedin.com/in/efsuns/" target="_blank">Efsun Kayi</a>{% endif %}
-
         {% if site.github.is_user_page %}<p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>{% endif %}
       </header>
       <section>
       {{ content }}
-      <div id="container" style="height: 600%"></div>
+      <div id="container" style="height: 500%"></div>
       <!--<script type="text/javascript" src="https://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>-->
        <script type="text/javascript" src="https://cdn.rawgit.com/vishalanand/multilingual-context/b4521540/echarts-all-3.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
        <script type="text/javascript">
         var dom = document.getElementById("container");
-        var myChart = echarts.init(dom);
+        var myChart = echarts.init(dom, width: 100%);
         var key = "1ndNXEMrekWBqraIInvAXW27RIXtkdlXiWoW7IhM_QaM";
         var url = "https://spreadsheets.google.com/feeds/list/" + key + "/od6/public/values?alt=json";
         var obj = {}
@@ -65,10 +66,8 @@
             if (option && typeof option === "object") {myChart.setOption(option, true);}
         });
        </script>
-       {% if site.github.is_project_page %}<p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>{% endif %}
       </section>
       <footer>
-        
       </footer>
     </div>
   </body>
