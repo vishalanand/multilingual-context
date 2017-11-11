@@ -22,14 +22,34 @@
       </header>
       <section>
       {{ content }}
+      <select id="name1" name="aa" onchange="readBox()">
+          <option value="123">Please select</option>
+          <option value="1ndNXEMrekWBqraIInvAXW27RIXtkdlXiWoW7IhM_QaM">Swahili</option>
+          <option value="1Z1EtELej4RCg4Ftn8BmGWvXhXJFUSbOXS3t60gEEZW4">Tagalog</option>
+       </select>
+      <!-- <input type="text" id="name">
+      <input type="button" value="Visualize" onclick="readBox1()"> -->
       <div id="container" style="height: 500%"></div>
-      <!--<script type="text/javascript" src="https://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>-->
        <script type="text/javascript" src="https://cdn.rawgit.com/vishalanand/multilingual-context/b4521540/echarts-all-3.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
        <script type="text/javascript">
+       function readBox()
+       {
+            var sheetValue = document.getElementById("name1");
+            if (sheetValue.value=='123')
+                invoke("1ndNXEMrekWBqraIInvAXW27RIXtkdlXiWoW7IhM_QaM");
+            invoke(sheetValue.value)
+       }
+       function readBox1()
+       {
+        var sheetValue = document.getElementById("name");
+        invoke(sheetValue.value)
+       }
+       function invoke(keyValue)
+       {
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
-        var key = "1ndNXEMrekWBqraIInvAXW27RIXtkdlXiWoW7IhM_QaM";
+        var key = keyValue;
         var url = "https://spreadsheets.google.com/feeds/list/" + key + "/od6/public/values?alt=json";
         var obj = {}
         $.get(url, function (result) {
@@ -65,6 +85,8 @@
             };
             if (option && typeof option === "object") {myChart.setOption(option, true);}
         });
+       }
+       readBox("123");
        </script>
       </section>
       <footer>
