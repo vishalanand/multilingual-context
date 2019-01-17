@@ -108,12 +108,12 @@
             var increased_scale = 1.80;
 
             $.get(url, function (result, status) {
-                if(status == "success") {
-                  alert(result.feed.title.$t + " (tab: " + tabID + ") loaded ");
-                }
-                else {
+                if(status != "success") {
                   alert(status);
                 }
+                //else {
+                //  alert(result.feed.title.$t + " (tab: " + tabID + ") loaded ");
+                //}
                 var data = [];
                 var scale = default_scale;
 
