@@ -22,90 +22,167 @@
       </header>
       <section>
       {{ content }}
-      <select id="name1" name="aa" onchange="readBox()">
-          <option value="123">Please select</option>
-          <option value="1ndNXEMrekWBqraIInvAXW27RIXtkdlXiWoW7IhM_QaM">Swahili-CCA</option>
-          <option value="1Z1EtELej4RCg4Ftn8BmGWvXhXJFUSbOXS3t60gEEZW4">Swahili-Clusters</option>
-        
-          <option value="1N7befJP-fP08f63Ypg8Bd5NZRjlDB5Qif972DYiGar0">B_Swahili_40</option>
-          <option value="1v2werbILYmWnghjWpgkXL4vGoJFWcqPT6YCoZORVAKg">B_Swahili_50</option>
-          <option value="1BzRSYvF-VSiOYSL-bZZkoAKJ8h49iVrfqTjEJVIhz_M">B_Swahili_100</option>
-          <option value="1vNFeZ7GxtSop_TKy-1RIIYd9JevW-l_ihdvKblCRL7U">B_Swahili_150</option>
-          <option value="1C3Qq5k9Vhzgy0WohcU5WxhoJhtsBv--fwNLUOhHRpBY">B_Swahili_200</option>
-          <option value="1K4NsekBgQKz-x3BXFKJWpLsuvTb7gmLWTsec_TpJ_yc">B_Swahili_250</option>
-          <option value="12_GNpeorhc3oEW0mpqVoj5L155aMR2Q1ZKK1vUktwkk">B_Swahili_300</option>
-          <option value="1W8-OqKwlotXWjos9xGDUx3dgsY_KY6_kZzOv_s7YGBk">B_Swahili_512</option>
+      <table style="margin: 0px auto;"></table>
+       <tr>&nbsp</tr><br/>
+         <tr>
+           <td>
+            &nbsp&nbsp&nbspInput Sheet: <select id="name1" name="aa" onchange="readBox()"> 
+              <option value="1Z1EtELej4RCg4Ftn8BmGWvXhXJFUSbOXS3t60gEEZW4">Select (default: SW_Clusters)</option>
+              <option value="1ndNXEMrekWBqraIInvAXW27RIXtkdlXiWoW7IhM_QaM">Swahili-CCA</option>
+              <option value="1Z1EtELej4RCg4Ftn8BmGWvXhXJFUSbOXS3t60gEEZW4">Swahili-Clusters</option>
+              
+              <option value="1N7befJP-fP08f63Ypg8Bd5NZRjlDB5Qif972DYiGar0">B_Swahili_40</option>
+              <option value="1v2werbILYmWnghjWpgkXL4vGoJFWcqPT6YCoZORVAKg">B_Swahili_50</option>
+              <option value="1BzRSYvF-VSiOYSL-bZZkoAKJ8h49iVrfqTjEJVIhz_M">B_Swahili_100</option>
+              <option value="1vNFeZ7GxtSop_TKy-1RIIYd9JevW-l_ihdvKblCRL7U">B_Swahili_150</option>
+              <option value="1C3Qq5k9Vhzgy0WohcU5WxhoJhtsBv--fwNLUOhHRpBY">B_Swahili_200</option>
+              <option value="1K4NsekBgQKz-x3BXFKJWpLsuvTb7gmLWTsec_TpJ_yc">B_Swahili_250</option>
+              <option value="12_GNpeorhc3oEW0mpqVoj5L155aMR2Q1ZKK1vUktwkk">B_Swahili_300</option>
+              <option value="1W8-OqKwlotXWjos9xGDUx3dgsY_KY6_kZzOv_s7YGBk">B_Swahili_512</option>
+              
+              <option value="1pD9UXoDzBYerd2j2eYKK7LpPdeBjfYxxE34CJzzid0A">A_Tagalog_40</option>
+              <option value="1x7oLPg3aBrrdLD7VJpDn-3ye9GoqG33NJnMd3QQ6TlE">A_Tagalog_50</option>
+              <option value="1o-mIjMpBV8gax9eGWPVwMkty_fRiQbSTIFTdUII9tcY">A_Tagalog_100</option>
+              <option value="1WSjLpog0smkApqdCQRYQQZpZobPLtC0gNk2-VXMm7vk">A_Tagalog_150</option>
+              <option value="1Ao1qw6S3lF11coWDGn7-0PVR-LsxL59ZPne5EBSJMRY">A_Tagalog_200</option>
+              <option value="1eVF0aUgzS9wtw8I2yjUA_FEZ6itt9BqxmXT-OyRF7DE">A_Tagalog_250</option>
+              <option value="1sFT8qSfUsogsjgONrb5GNaTykonRo6kC3f7Xnj1Q6Uo">A_Tagalog_300</option>
+              <option value="1dhXDRUif0Lybt594HyQeYKwCIHwYFqnhfNSptiT_bNw">A_Tagalog_512</option>
+           </select></td> &nbsp&nbsp
+           <a href="#" id="myLink" target="_blank"> Current Worksheet</a> &nbsp&nbsp&nbsp
+           <td>
+            Enter words (<span style="color:blue;font-size:15px"> highlight "lang_word" separated by ';' </span> ) : 
+            <input type="text" id="highlightWords" value="" onchange="highlightWordsJS()" style="width: 40px;"/>
+          </td>
+           &nbsp&nbsp&nbsp
+           <td>
+              Enter "Sheet_ID;Tab_Index" for unlisted sheets (tabs are 1-indexed): 
+              <input type="text" id="specificSheetID"  value="" style="width: 40px;"/>
+              <button onclick="specificSheetJS(document.getElementById('specificSheetID').value)" id="testButton">Invoke</button>
+           </td>
 
-          <option value="1pD9UXoDzBYerd2j2eYKK7LpPdeBjfYxxE34CJzzid0A">A_Tagalog_40</option>
-          <option value="1x7oLPg3aBrrdLD7VJpDn-3ye9GoqG33NJnMd3QQ6TlE">A_Tagalog_50</option>
-          <option value="1o-mIjMpBV8gax9eGWPVwMkty_fRiQbSTIFTdUII9tcY">A_Tagalog_100</option>
-          <option value="1WSjLpog0smkApqdCQRYQQZpZobPLtC0gNk2-VXMm7vk">A_Tagalog_150</option>
-          <option value="1Ao1qw6S3lF11coWDGn7-0PVR-LsxL59ZPne5EBSJMRY">A_Tagalog_200</option>
-          <option value="1eVF0aUgzS9wtw8I2yjUA_FEZ6itt9BqxmXT-OyRF7DE">A_Tagalog_250</option>
-          <option value="1sFT8qSfUsogsjgONrb5GNaTykonRo6kC3f7Xnj1Q6Uo">A_Tagalog_300</option>
-          <option value="1dhXDRUif0Lybt594HyQeYKwCIHwYFqnhfNSptiT_bNw">A_Tagalog_512</option>
-       </select>
+         </tr>
+       </table>
       <!-- <input type="text" id="name">
       <input type="button" value="Visualize" onclick="readBox1()"> -->
-      <div id="container" style="height: 500%"></div>
+      <div id="container" style="height: 100%"></div>
        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/vishalanand/multilingual-context@b4521540b3a6ef891479f4e088d230bfa9c716e1/echarts-all-3.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
        <script type="text/javascript">
-       function readBox()
-       {
-            var sheetValue = document.getElementById("name1");
-            if (sheetValue.value=='123')
-                //invoke("1ndNXEMrekWBqraIInvAXW27RIXtkdlXiWoW7IhM_QaM");
+        function specificSheetJS(keyID) {
+          var textValues = document.getElementById("highlightWords").value.split(";").filter(function(e){ return e === 0 || e });
+          document.getElementById("myLink").href="https://docs.google.com/spreadsheets/d/" + keyID;
+          invoke(keyID, textValues);
+        }
+        
+        function highlightWordsJS() {
+           var textValues = document.getElementById("highlightWords").value.split(";").filter(function(e){ return e === 0 || e });
+           readBox(textValues)
+        }
+        function readBox(highlight_words_array=[]) {
+          var sheetValue = document.getElementById("name1");
+          if (sheetValue.value=='123')
               invoke("1Z1EtELej4RCg4Ftn8BmGWvXhXJFUSbOXS3t60gEEZW4");
-            invoke(sheetValue.value)
-       }
-       function readBox1()
-       {
-        var sheetValue = document.getElementById("name");
-        invoke(sheetValue.value)
-       }
-       function invoke(keyValue)
-       {
-        var dom = document.getElementById("container");
-        var myChart = echarts.init(dom);
-        var key = keyValue;
-        var url = "https://spreadsheets.google.com/feeds/list/" + key + "/od6/public/values?alt=json";
-        var obj = {}
-        $.get(url, function (result) {
-            var data = [];
-            $(result.feed.entry).each(function (index, row) {
-                if (obj[row.gsx$language.$t] == undefined) { obj[row.gsx$language.$t] = [] }
-                obj[row.gsx$language.$t].push([row.gsx$x.$t, row.gsx$y.$t, 0.2, row.gsx$word.$t, row.gsx$language.$t])
-            });
-            var series = []
-            var legend = []
-            for(var className in obj) {
-                legend.push(className);
-                series.push({
-                    name: className,
-                    type: 'scatter',
-                    data: obj[className],
-                    itemStyle: {normal: {opacity: 0.8}},
-                    symbolSize: function (val) {return val[2] * 40;}
-                });
+          else
+            invoke(sheetValue.value, highlight_words_array)
+        }
+
+        function invoke(keyValue, highlight_words_array) {
+            var dom = document.getElementById("container");
+            var myChart = echarts.init(dom);
+            myChart.clear();
+            var app = {};
+            option = null;
+            var key = keyValue.split(';')[0];
+            var tabID = keyValue.split(';')[1];
+            if(tabID == null) {
+              tabID = 1;
             }
-            option = {
-                animation: true,
-                legend: {data: legend, type: "scroll"},
-                tooltip: {},
-                xAxis: {type: 'value', splitLine: {show: true}},
-                yAxis: {type: 'value', splitLine: {show: true}},
-                dataZoom: [{type: 'slider',show: true,xAxisIndex: [0]},
-                    {type: 'slider',show: true,yAxisIndex: [0],left: '93%'},
-                    {type: 'inside',xAxisIndex: [0]},
-                    {type: 'inside',yAxisIndex: [0]}
-                ],
-                series: series
-            };
-            if (option && typeof option === "object") {myChart.setOption(option, true);}
-        });
-       }
-       readBox("123");
+            
+            var url = "https://spreadsheets.google.com/feeds/list/" + key + "/" + tabID + "/public/values?alt=json";
+            document.getElementById("myLink").href="https://docs.google.com/spreadsheets/d/" + keyValue;
+            worksheetUrl = "https://spreadsheets.google.com/feeds/worksheets/1PDuoVw4ZYdQeW0L8BpaAsfWZZwGvxk3hny9PfJQHlfM/public/full";
+            var obj1 = {};
+            var default_scale = 0.25;
+            var increased_scale = 1.80;
+
+            $.get(url, function (result, status) {
+                if(status == "success") {
+                  alert(result.feed.title.$t + " (tab: " + tabID + ") loaded ");
+                }
+                else {
+                  alert(status);
+                }
+                var data = [];
+                var scale = default_scale;
+
+                $(result.feed.entry).each(function (index, row) {
+                    if (obj1[row.gsx$language.$t] == undefined) {
+                        obj1[row.gsx$language.$t] = []
+                    }
+
+                    if(jQuery.inArray(row.gsx$language.$t + "_" + row.gsx$word.$t, highlight_words_array) !== -1){
+                      alert("Detected: " + row.gsx$language.$t + "_" + row.gsx$word.$t + ": " + row.gsx$x.$t + ", " + row.gsx$y.$t);
+                      scale = increased_scale;
+                    }
+                    else
+                      scale = default_scale;
+                      
+                    obj1[row.gsx$language.$t].push([row.gsx$x.$t, row.gsx$y.$t, scale, row.gsx$word.$t, row.gsx$language.$t])
+                });
+                var series1 = []
+                var legend1 = []
+                for(var className in obj1) {
+                    legend1.push(className);
+                    series1.push({
+                        name: className,
+                        data: obj1[className],
+                        type: 'scatter',
+                        symbolSize: function (val) {return val[2] * 20;},
+                        label: {
+                          emphasis: {
+                            show: true,
+                            formatter: function (param) {
+                              return param.data[3];
+                            },
+                            position: 'top'
+                          }
+                        },
+                        itemStyle: {
+                          normal: {
+                              shadowColor: 'rgba(0, 0, 0, 0.1)',
+                              shadowOffsetY: 5
+                          }
+                      }
+                    });
+                }
+                option = {
+                    title: {text: 'SW/TL/EN Word context embeddings: ' + result.feed.title.$t + ' [Tab: ' + tabID + ']'},
+                    legend: {data: legend1, type: "scroll", right: 100},
+                    tooltip: {
+                      formatter: function(params) {
+                        return params.data[4] + ": " + params.data[3];
+                      }
+                    },
+                    xAxis: { splitLine: {lineStyle: {type: 'dashed'}} },
+                    yAxis: { splitLine: {lineStyle: {type: 'dashed'}}, scale: true },
+                    dataZoom: [
+                      {type: 'slider',show: true,xAxisIndex: [0]},
+                      {type: 'slider',show: true,yAxisIndex: [0],left: '93%'},
+                      {type: 'inside', xAxisIndex: [0]},
+                      {type: 'inside', yAxisIndex: [0]}
+                  ],
+                    series: series1
+                };
+                if (option && typeof option === "object") {
+                    myChart.setOption(option, true);
+                }
+            });
+        }
+        readBox();
+        if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+        }
        </script>
       </section>
       <footer>
