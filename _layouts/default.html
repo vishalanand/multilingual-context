@@ -12,15 +12,15 @@
         <a href="{{ site.github.url }}"> <h3>{{ site.title | default: site.github.repository_name }}</h3> </a>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-        {% if site.github.is_project_page %}<p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ github_name }}</small></a></p>
-        <p>Links of relevant pages in one page: <a href="https://goo.gl/8QjLVR">Landing page</a></p>
+        {% if site.github.is_project_page %}<p class="view"><a href="{{ site.github.repository_url }}" target="_blank">View the Project on GitHub <small>{{ github_name }}</small></a></p>
+        <p>Links of relevant pages in one page: <a href="https://goo.gl/8QjLVR" target="_blank">Landing page</a></p>
         <!--<br/><br/><br/><br/><br/><br/><p>This project is maintained by <br/><a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>-->
         <!--<br/>Project members (in no particular order):<br/>
           <a href="http://vishalanand.net" target="_blank">Vishal Anand</a><br/>
           <a href="https://www.linkedin.com/in/efsuns/" target="_blank">Efsun Kayi</a><br/>
           <a href="http://www.cs.columbia.edu/~smara/index.html" target="_blank">Smaranda Muresan</a>{% endif %}
         -->
-        {% if site.github.is_user_page %}<p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>{% endif %}
+        {% if site.github.is_user_page %}<p class="view"><a href="{{ site.github.owner_url }}" target="_blank">View My GitHub Profile</a></p>{% endif %}
       </header>
       <section>
       {{ content }}
